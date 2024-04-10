@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            background-color: #f0f0f0; /* Light grey */
+            color: #333; /* Dark grey */
+            font-family: Arial, sans-serif; /* Specify a fallback font */
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box; /* Apply box-sizing to include padding and border in the element's total width and height */
+        }
+
+        .container {
+            max-width: 400px; /* Adjust the maximum width of the container */
+            margin: 50px auto; /* Center the container horizontally */
+            padding: 20px; /* Add padding for better visual appearance */
+            background-color: #fff; /* White background */
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle box-shadow */
+        }
+
+        h1 {
+            text-align: center; /* Center-align the heading */
+        }
+
+        form {
+            margin-top: 20px; /* Add some space between the heading and the form */
+        }
+
+        .form-group {
+            margin-bottom: 20px; /* Add space between form groups */
+        }
+
+        label {
+            font-weight: bold; /* Make labels bold */
+        }
+
+        input[type="text"] {
+            width: 100%; /* Make text input fields fill their container */
+            padding: 10px; /* Add padding to input fields */
+            border: 1px solid #ccc; /* Add a light grey border */
+            border-radius: 5px; /* Add a slight border-radius */
+        }
+
+        input[type="submit"] {
+            width: 100%; /* Make submit button fill its container */
+            padding: 10px; /* Add padding to the button */
+            background-color: #007bff; /* Blue color */
+            color: #fff; /* White text color */
+            border: none; /* Remove border */
+            border-radius: 5px; /* Add a slight border-radius */
+            cursor: pointer; /* Add pointer cursor on hover */
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3; /* Darker blue color on hover */
+        }
+
+        .signup-link {
+            display: block; /* Make the link a block element to occupy full width */
+            text-align: center; /* Center-align the link */
+            margin-top: 20px; /* Add some space between the form and the link */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Login Page</h1>
+
+        <form method="POST" action="">
+            {{ form.hidden_tag() }}
+
+            <div class="form-group">
+                <label for="name">Name:</label>
+                {{ form.name }}
+            </div>
+
+            <div class="form-group">
+                <label for="mobile_number">Mobile Number:</label>
+                {{ form.mobile_number }}
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Login">
+            </div>
+        </form>
+
+        <a href="{{ url_for('register') }}" class="signup-link">Don't have an account? Sign Up</a>
+    </div>
+</body>
+
+</html>

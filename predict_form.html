@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Soil Prediction</title>
+    <style>
+        body {
+            background-color: #f0f0f0; /* Light grey background */
+            color: #333; /* Dark grey text color */
+            font-family: Arial, sans-serif; /* Specify a fallback font */
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box; /* Apply box-sizing to include padding and border in the element's total width and height */
+        }
+
+        h1 {
+            text-align: center; /* Center-align the heading */
+            margin-top: 20px; /* Add some space at the top */
+        }
+
+        form {
+            text-align: center; /* Center-align the form */
+            margin-top: 20px; /* Add some space at the top */
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 50%;
+            margin: 20px auto; /* Center the table horizontally */
+            background-color: #fff; /* White background for the table */
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2; /* Light grey background for table header */
+        }
+
+        input[type="file"] {
+            margin-right: 10px; /* Add some space between file input and submit button */
+        }
+
+        input[type="submit"] {
+            padding: 8px 16px; /* Add padding to submit button */
+            background-color: #007bff; /* Blue color */
+            color: #fff; /* White text color */
+            border: none; /* Remove border */
+            border-radius: 5px; /* Add a slight border-radius */
+            cursor: pointer; /* Add pointer cursor on hover */
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3; /* Darker blue color on hover */
+        }
+
+        .result-container {
+            text-align: center; /* Center-align the result container */
+        }
+
+        .dashboard-button {
+            margin-top: 20px; /* Add some space between the result table and button */
+        }
+    </style>
+</head>
+<body>
+    <h1>Soil Prediction Results</h1>
+
+    <form action="/" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" accept="image/*">
+        <input type="submit" value="Predict">
+    </form>
+
+    {% if predicted_class and probability %}
+        <div class="result-container">
+            <h2>Prediction Results</h2>
+            <table>
+                <tr>
+                    <th>Class</th>
+                    <th>Probability</th>
+                </tr>
+                <tr>
+                    <td>{{ predicted_class }}</td>
+                    <td>{{ probability }}</td>
+                </tr>
+            </table>
+
+            <!-- Add a button to direct to the dashboard -->
+            <form action="{{ url_for('dashboard') }}" method="get" class="dashboard-button">
+                <input type="submit" value="Go to Dashboard">
+            </form>
+        </div>
+    {% endif %}
+</body>
+</html>

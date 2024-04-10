@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soil Profiling & Precision Crop Recommendation</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Custom styles */
+        body {
+            background-color: #2c3e50; /* Dark blue */
+            color: #fff; /* White */
+            font-family: Arial, sans-serif;
+        }
+
+        /* Container style to center content vertically */
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Style for the buttons */
+        .button {
+            display: inline-block;
+            padding: 12px 24px;
+            font-size: 18px;
+            text-align: center;
+            text-decoration: none;
+            background-color: #28a745; /* Green */
+            color: #fff; /* White */
+            border: 2px solid #28a745;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+        }
+
+        /* Hover effect for buttons */
+        .button:hover {
+            background-color: #218838; /* Darker green */
+            border-color: #218838;
+        }
+
+        /* Add some margin between the buttons */
+        .button + .button {
+            margin-left: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="text-center">
+            <h1>Soil Profiling & Precision Crop Recommendation</h1>
+            <p>Welcome to our platform where we utilize machine learning to provide soil profiling and precision crop recommendations tailored to your agricultural needs.</p>
+            <!-- Button for Login -->
+            <a href="{{ url_for('login') }}" class="button">Login</a>
+
+            <!-- Button for Register -->
+            <a href="{{ url_for('register') }}" class="button">Register</a>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS (Optional) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
